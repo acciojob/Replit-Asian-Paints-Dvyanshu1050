@@ -1,28 +1,29 @@
-//your JS code here. If required
-document.getElementById("change_button").addEventListener("click", () => {
+// change color
+document.getElementById("change_button").addEventListener("click", function () {
 
   let blockId = document.getElementById("block_id").value;
   let color = document.getElementById("colour_id").value;
 
-  let allBlocks = document.querySelectorAll(".grid-item");
+  let blocks = document.querySelectorAll("#grid-item");
 
-  // 🧠 step 1: sabko reset karo
-  allBlocks.forEach(item => {
+  // step 1: reset all
+  blocks.forEach(function (item) {
     item.style.backgroundColor = "transparent";
   });
 
-  // 🧠 step 2: selected block ko color do
-  let selected = document.getElementById(blockId);
-  if (selected) {
-    selected.style.backgroundColor = color;
+  // step 2: apply color
+  let index = blockId - 1;
+  if (blocks[index]) {
+    blocks[index].style.backgroundColor = color;
   }
 });
 
+// reset button
+document.getElementById("Reset").addEventListener("click", function () {
 
-document.getElementById("Reset").addEventListener("click", () => {
-  let allBlocks = document.querySelectorAll(".grid-item");
+  let blocks = document.querySelectorAll("#grid-item");
 
-  allBlocks.forEach(item => {
+  blocks.forEach(function (item) {
     item.style.backgroundColor = "transparent";
   });
 });
